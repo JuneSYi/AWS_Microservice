@@ -2,6 +2,6 @@
 #
 Simple microservices in Java that somehow ties into an AWS service...
 - Maven
-- Java
-- VSCode (probably a bad idea)
-- Spring Boot
+- Java 17
+- Eclipse
+- Spring Boot 3.0.1
