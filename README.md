@@ -5,3 +5,4 @@ Simple microservices in Java that somehow ties into an AWS service...
 - Java 17
 - Eclipse
 - Spring Boot 3.0.1
+- Spring Cloud
