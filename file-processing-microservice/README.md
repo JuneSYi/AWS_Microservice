@@ -20,6 +20,17 @@ remove all files that contain the following classified key words "hydra" "Ten ri
 
 ### Process
 1. Maven CLI: mvn archetype:generate -DgroupId=com.experiment -DartifactId=file-processing-microservice -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-2. Added AWS Kit
+2. Added AWS SDK to pom.xml
+3. Created FileProcessor.java file
+4. Added Apache Maven Shade Plugin to pom.xml
+	- to package your JAR file with the artifacts in an uber JAR, which consists of all dependencies required to run the project.
+
+#### For my own personal education:
+More on S3, sqs, lambda
+- https://aws.plainenglish.io/system-design-s3-events-to-lambda-vs-s3-events-to-sqs-sns-to-lambda-2d41477d1cc9
+creating scheduled events to invoke lambda functions
+- https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/usecases/creating_scheduled_events
+Primary site for documentation
+- https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/overview-summary.html
 
 
