@@ -1,11 +1,12 @@
 # AWS_Microservice
 #
-Simple microservices in Java that somehow ties into an AWS service...
+Simple microservices in Java or Python that somehow ties into an AWS service...
 - Maven
 - Java 17
 - Eclipse
 - Spring Boot 3.0.1
 - Spring Cloud
+- Python
 
 ###### file-processing-microservice
 - First real attempt at microservice
@@ -15,3 +16,4 @@ Simple microservices in Java that somehow ties into an AWS service...
 
 ###### Python
 - Folder for maintaining my education on Python and advanced concepts related to programming
+- Deep dive into Concurrency
