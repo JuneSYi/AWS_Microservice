@@ -1,0 +1,47 @@
+# Example: 
+import re
+# .compile() method is used to compile a regex pattern so we can use .match() or .search()
+# using r before a string literal creates raw-string literal. Raw strings do not process escape sequences (\n, \b, etc).
+    # r'' is commonly used for regex patterns which often contain a lot of \ characters
+    # e.g. print('\n') # Prints a newline character
+    # print('\b') # Prints a backspace character
+# [] is used to indicate a set of characters.
+pattern = re.compile(r"\[(on|off)\]") # Slight optimization
+'''
+The regular expression r"\[(on|off)\]" uses the r before the string because the string contains back slashes, 
+which have a special meaning in regular expressions. The r before the string tells Python to treat the string 
+as a raw string, which means that any backslashes within the string should be treated as literal characters, 
+rather than escape sequences.
+
+In this regular expression, the backslashes are used to escape the square brackets, which have a special 
+meaning in regular expressions. The [] characters are used to specify a character set that matches any character 
+that is inside the square brackets. Without the backslashes, the regular expression would try to match a character 
+that is literally "[" or "]".
+
+The regular expression is looking for a string that starts with "[", then has either "on" or "off" characters 
+and finally ends with "]".
+
+(on|off) is a group that specifies the possible options of the character set and matches either "on" or "off". 
+The | character is the "or" operator in regular expressions, which indicates that the preceding or following character 
+set should match.
+
+'''
+print(re.search(pattern, "Mono: Playback 65 [75%] [-16.50dB] [on]"))
+# Returns a Match object!
+print(re.search(pattern, "Nada...:-("))
+# Doesn't return anything.
+# End Example
+
+# Exercise: make a regular expression that will match an email
+def test_email(your_pattern):
+    pattern = re.compile(your_pattern)
+    emails = ["john@example.com", "python-list@python.org", "wha.t.`1an?ug{}ly@email.com"]
+    for email in emails:
+        if not re.match(pattern, email):
+            print("You failed to match %s" % (email))
+        elif not your_pattern:
+            print("Forgot to enter a pattern!")
+        else:
+            print("Pass")
+pattern = r"" # Your pattern here!
+test_email(pattern)

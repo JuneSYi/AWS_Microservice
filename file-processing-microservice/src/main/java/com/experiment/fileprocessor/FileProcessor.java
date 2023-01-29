@@ -38,7 +38,7 @@ public class FileProcessor {
 			// get message content
 			String content = message.getBody();
 			// every object within s3 has an Amazon S3 key which we'll need to parse
-			S3Object object =
+			// S3Object object =
 					
 			// process the file and delete if it contains marked words
 					

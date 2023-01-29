@@ -1,0 +1,18 @@
+# Normally we define a function using the def keyword somewhere in the code and call it whenever we need to use it.
+def sum(a,b):
+    return a + b
+
+a = 1
+b = 2
+c = sum(a,b)
+print(c)
+
+### Lambda format
+your_function_name = lambda inputs : output
+
+### Above function will look like this
+a = 1
+b = 2
+sum = lambda x,y : x + y
+c = sum(a,b)
+print(c)

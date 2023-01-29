@@ -12,3 +12,6 @@ Simple microservices in Java that somehow ties into an AWS service...
 
 ###### /first-spring-boot/, /limits-microservice/, /secondspringboot/
 - All Spring boot and spring cloud practice
+
+###### Python
+- Folder for maintaining my education on Python and advanced concepts related to programming
