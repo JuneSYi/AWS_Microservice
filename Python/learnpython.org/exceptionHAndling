@@ -1,0 +1,15 @@
+# e.g. below, when you're iterating over a list and you need to iterate over 20 numbers but the list is made from user input and might 
+# not have 20 numbers in it. After you reach the end of the list, this function will catch any errors and print zero if index does not exist.
+def do_stuff_with_number(n):
+    print(n)
+
+def catch_this():
+    the_list = (1, 2, 3, 4, 5)
+
+    for i in range(20):
+        try:
+            do_stuff_with_number(the_list[i])
+        except IndexError: # Raised when accessing a non-existing index of a list
+            do_stuff_with_number(0)
+
+catch_this()

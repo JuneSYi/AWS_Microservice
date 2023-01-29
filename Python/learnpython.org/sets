@@ -1,0 +1,20 @@
+# you can use intersectio method to find out matches
+
+a = set(["Jake", "John", "Eric"])
+b = set(["John", "Jill"])
+
+print(a.intersection(b))
+print(b.intersection(a))
+# both print {'John'}
+
+print(a.symmetric_difference(b))
+# shows names that don't have a match
+
+print(a.difference(b)) 
+# {'Jake', 'Eric'}
+print(b.difference(a)) 
+# {'Jill'}
+# shows the difference
+
+print(a.union(b))
+# {'Jake', 'Jill', 'John', 'Eric'}
