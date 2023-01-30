@@ -1,21 +1,21 @@
 # Basics
 #
 - [Program vs Process vs Thread](#program-vs-process-vs-thread)
-- Concurrency vs Parallism
-- Cooperative vs Preemptive Multitasking
-- Throughput vs Latency
-- Synchronous vs Asynchronous
-- I/O Bound vs CPU Bound
-- Thread Safety
-- Critical Section & Race Conditions
-- Deadlock, Liveness & Reentrant Locks
-- Mutex vs Semaphore
-- Mutex vs Monitor
-- Mesa vs Hoare Monitors
-- Semaphore vs Monitor
-- Global Interpreter Lock
-- Amdah's Law
-- Moore's Law
+- [Concurrency vs Parallism](#concurrency-vs-parallelism)
+- [Cooperative vs Preemptive Multitasking](#cooperative-vs-preemptive-multitasking)
+- [Throughput vs Latency](#throughput-vs-latency)
+- [Synchronous vs Asynchronous](#synchronous-vs-asynchronous)
+- [I/O Bound vs CPU Bound](#io-bound-vs-cpu-bound)
+- [Thread Safety](#thread-safety)
+- [Critical Section & Race Conditions](#critical-section--race-conditions)
+- [Deadlock, Liveness & Reentrant Locks](#deadlock-liveness--reentrant)
+- [Mutex vs Semaphore](#mutex-vs-semaphore)
+- [Mutex vs Monitor](#mutex-vs-monitor)
+- [Mesa vs Hoare Monitors](#mesa-vs-hoare-monitors)
+- [Semaphore vs Monitor](#semaphore-vs-monitor)
+- [Global Interpreter Lock](#global-interpreter-lock)
+- [Amdah's Law](#amdahs-law)
+- [Moore's Law](#moores-law)
 
 #### Introduction
 ##### ./singleVsMultiThread.py
