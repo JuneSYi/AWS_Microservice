@@ -1,6 +1,6 @@
 # Basics
 #
-- [Program vs Process vs Thread](#### Program vs Process vs Thread)
+- [Program vs Process vs Thread](#Program vs Process vs Thread)
 - Concurrency vs Parallism
 - Cooperative vs Preemptive Multitasking
 - Throughput vs Latency
