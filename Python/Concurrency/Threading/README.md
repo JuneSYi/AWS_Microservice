@@ -42,3 +42,5 @@
     - if daemon isn't specified, default is True
 - because daemon threads are designe to run in the background, providing services to other non-daemon threads, and they are automatically terminated when there are no more non-daemon threads running, resources such as open files and db connections may not shut-down properly.
     - in these cases, daemon threads are not a good choice for such tasks; may result in improper shutdown and resource leaks
+
+#### Lock
