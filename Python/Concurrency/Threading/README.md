@@ -31,3 +31,14 @@
 - from the output we'll see "subclassThread is executing" followed by "MainThread exiting"
 
 #### Daemon Thread
+##### ./daemonExample.py
+- daemon is a computer program that runs as a background process; similarily, a daemon thread in python runs in the background
+- a python program will not exit until all regular/user threads terminate, a program may exit if the daemon thread is still not finished
+- daemon threads exit as soon as the main program thread exits
+- can be utilized by marking daemon=True in the Thread class's constructor
+    - daemonThread = Thread(target=daemon_thread_task, daemon=True)
+- in daemonExample.py, if daemon=False, the main thread exits but the program continues to run...eventually timing out
+    - but since we have daemon=True, the main thread exits along with the python program
+    - if daemon isn't specified, default is True
+- because daemon threads are designe to run in the background, providing services to other non-daemon threads, and they are automatically terminated when there are no more non-daemon threads running, resources such as open files and db connections may not shut-down properly.
+    - in these cases, daemon threads are not a good choice for such tasks; may result in improper shutdown and resource leaks

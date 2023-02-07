@@ -16,4 +16,6 @@ Simple microservices in Java or Python that somehow ties into an AWS service...
 
 ###### Python
 - Folder for maintaining my education on Python and advanced concepts related to programming
+    - Closures, Decorates, serialization, lambda functions, etc
 - Deep dive into Concurrency
+    - Mutex, Monitors, Semaphores, Parallism, I/O Bound, async, GIL, etc
