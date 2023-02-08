@@ -44,3 +44,36 @@
     - in these cases, daemon threads are not a good choice for such tasks; may result in improper shutdown and resource leaks
 
 #### Lock
+##### ./lockExample.py
+- Lock offers two methods:
+    - acquire()
+    - release()
+- a Lock object can only be in two states: locked or unlocked--a Lock object can only be unlocked by a thread that locked it in the first place
+- a Lock object is equivalent of a mutex
+- acquire()
+    - whenever a Lock object is created, any thread can invoke acquire() on the Lock object to lock it (can only be invoked by a single thread due to GIL; other programming languages do not face this limitation)
+    - if another thread attempts to acquire(), the thread will be locked until the Lock object is released; if the caller doesn't want to be blocked indefinitely, a floating point timeout value can be passed in the acquire() method.
+    - method returns true if the lock is successfully acquired and false if not
+- release()
+    - changes the state of the Lock object to unlocked
+- in lockExample.py we can see the correct usage of acquire() and release() to allow unlocking so that thread2 can begin. you can see from the output that thread2 won't acquire the lock until thread 1 is released.
+
+#### RLock
+##### ./rlockExample.py
+- a reentrant lock is a lock which can be reacquired by the same thread
+- An RLock object carries the notion of ownership; if a thread acquires an RLlock object, it can choose to reacquire it as many times as possible
+- in rlockExample.py, if line 20 rlock.release() is commented, the threads attempting to acquire the lock get blocked until it is released
+    - the nested acquire/release calls are tracked internally by recursion level; when the recursion level is zero, the reentrant lock is in unlocked state
+
+#### Condition Variables
+##### ./conditionVarExamples.py
+- condition variables provide mutual exclusion and the ability for threads to wait for a predicate to become true
+- two important methods of a condition variable:
+    - wait() - invoked to make a thread sleep and give up resources
+    - notify() - invoked by a thread when a condition becomes true and the invoking threads want to inform the waiting thead or threads to proceed
+- a condition variable is always associated with a lock; the lock can be either reentrant or a plain lock
+    - the associated lock must be acquired before a thread can invoke wait() or notify() on the condition variable
+- Referring to the two examples in conditionVarExamples.py, we can create a lock ourselves and pass it to the condition variable's constructor. If no lock object is passed then a lock is created underneath the hood by the condition variable.
+- when a thread invokes wait(), it simultaneously gives up the lock associated with the condition variable. Only when the sleeping thread wakes up again on a notify(), will it reacquire the lock
+- the third example in conditionVarExamples.py shows the idiomatic use of wait()
+
