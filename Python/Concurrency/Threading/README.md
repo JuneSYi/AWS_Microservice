@@ -67,6 +67,7 @@
 
 #### Condition Variables
 ##### ./conditionVarExamples.py
+##### ./condVariableAnnotated.py
 - condition variables provide mutual exclusion and the ability for threads to wait for a predicate to become true
 - two important methods of a condition variable:
     - wait() - invoked to make a thread sleep and give up resources
@@ -76,4 +77,7 @@
 - Referring to the two examples in conditionVarExamples.py, we can create a lock ourselves and pass it to the condition variable's constructor. If no lock object is passed then a lock is created underneath the hood by the condition variable.
 - when a thread invokes wait(), it simultaneously gives up the lock associated with the condition variable. Only when the sleeping thread wakes up again on a notify(), will it reacquire the lock
 - the third example in conditionVarExamples.py shows the idiomatic use of wait()
+- wait(n) - where n represents seconds until it auto releases
+- notify(n) - where n represents how many threads to wake up
+- notifyall() - wakes up all threads
 
